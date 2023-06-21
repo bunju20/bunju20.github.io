@@ -8,8 +8,6 @@ group :test do
   gem "html-proofer", "~> 3.18"
 end
 
-
-gem 'jemoji'
   
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
@@ -29,3 +27,5 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 if RUBY_PLATFORM =~ /linux-musl/
   gem "jekyll-sass-converter", "~> 2.0"
 end
+
+gem "jemoji"
