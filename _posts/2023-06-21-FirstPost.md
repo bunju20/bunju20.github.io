@@ -1,6 +1,6 @@
 ---
 
-title: 포스팅 제목
+title: 첫 포스팅
 date: 2023-06-21 16:26:00 +09:00
 categories: [front, front]
 tags:
@@ -8,8 +8,7 @@ tags:
     github,
     web
   ]
-
 ---
 
-되나?
+첫 포스팅
 
