@@ -1,12 +1,14 @@
 ---
-title: ArtToMusic : start
+title: ArtToMusic_start
 date: 2023-06-25 18:24:00 +09:00
-categories: [toy,ArtToMusic]
+categories: [toy,arttomusic]
 tags:
   [
     art, music, ai
   ]
 ---
+
+
 
 ###  :white_check_mark: **목표**
 
