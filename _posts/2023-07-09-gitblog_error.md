@@ -4,11 +4,11 @@ date: 2023-07-09 14:21:00 +09:00
 categories: [error,githubpage]
 tags:
   [
-    error, githubpage, blog, 404, commit, push
+    error, githubpage, blog, commit, push
   ]
 ---
 
-  # 깃허브 블로그 404오류
+  # 깃허브 블로그 오류
 
 ```
 404
