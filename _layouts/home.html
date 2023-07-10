@@ -2,7 +2,7 @@
 layout: page
 refactor: true
 ---
-
+<img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=0:0000FF,100:00FFFF&waveSpeed=0.2&fontColor=ffffff&fontSize=60" alt="animated image">
 {% include lang.html %}
 
 {% assign pinned = site.posts | where: 'pin', 'true' %}
@@ -50,6 +50,7 @@ refactor: true
     class="mb-5"
   {% endunless %}
 >
+
   {% for post in site.posts %}
     <a href="{{ post.url | relative_url }}" class="card-wrapper">
       <div class="card post-preview flex-md-row-reverse">
