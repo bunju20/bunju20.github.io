@@ -67,7 +67,7 @@ var mergeAlternately = function(word1, word2) {
 > 위의 코드가 로직상 optimal이라 밑의 코드는 시간, 공간 복잡도에서의 이득은 없음.
 > 아래 코드는 solution 상에서는 O(N)이라고 했지만, string에 char을 += 한다. string의 불변성으로 인해서 더할 때 마다 O(N)의 시간복잡도가 발생. 즉, 가장 긴 문자열의 길이가 N이라고할때
 >
-> `O(N^N)`이 가능해짐.  [js에선 string과 배열의 처리가 같다고 해도 다른 코드로 작성할 때를 고려해야함.]
+> `O(N^N)`이 가능해짐. 즉 시간복잡도가 비효율적임.
 
 ```js
 const mergeAlternately = (a, b) => {
