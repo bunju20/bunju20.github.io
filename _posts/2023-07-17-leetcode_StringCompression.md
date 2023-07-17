@@ -109,7 +109,7 @@ solution:
 
    
 
-#### :happy: 추천수는 거짓말을 하지 않는다.
+#### 추천수는 거짓말을 하지 않는다.
 
 ![image-20230717171941251](https://raw.githubusercontent.com/bunju20/image_server/main/img_/image-20230717171941251.png)
 
