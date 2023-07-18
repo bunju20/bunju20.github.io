@@ -1,6 +1,6 @@
 ---
-title: Leetcode 443. String Compression
-date: 2023-07-17 16:24:00 +09:00
+title: Leetcode 283. Move Zeroes
+date: 2023-07-18 12:24:00 +09:00
 categories: [coding test,leetcode]
 tags:
   [
