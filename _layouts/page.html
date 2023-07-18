@@ -40,8 +40,22 @@ layout: default
   <!-- panel -->
   <div id="panel-wrapper" class="col-xl-3 ps-2 text-muted">
     <div class="access">
+      {% if site.data.todo.size > 0 %}
+      <div id="access-todo" class="post">
+        <div class="panel-heading">Todo List</div>
+        <ul class="post-content list-unstyled ps-0 pb-1 ms-1 mt-2">
+          {% for item in site.data.todo %}
+            <li class="text-truncate lh-lg">
+              <a href="{{ item.post_url | relative_url }}">{{ item.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <!-- #access-todo -->
+    {% endif %}
       {% include_cached update-list.html lang=lang %}
       {% include_cached trending-tags.html lang=lang %}
+
     </div>
 
     {% for _include in layout.panel_includes %}
@@ -49,6 +63,7 @@ layout: default
       {% include {{ _include_path }} lang=lang %}
     {% endfor %}
   </div>
+  
 </div>
 
 <!-- tail -->
