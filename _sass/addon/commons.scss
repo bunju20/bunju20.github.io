@@ -745,19 +745,22 @@ $btn-mb: 0.5rem;
     font-size: 1.75rem;
     line-height: 1.2;
     letter-spacing: 0.25px;
-    color: rgba(134, 133, 133, 0.99);
+    color: rgba(67, 67, 67, 0.99);
     margin-top: 1.25rem;
     margin-bottom: 0.5rem;
+    
 
     a {
       @extend %clickable-transition;
       @extend %sidebar-link-hover;
+      color: rgba(99, 99, 99, 0.99);
     }
   }
 
   .site-subtitle {
+    border-radius: 5%;
     font-size: 95%;
-    color: var(--sidebar-muted-color);
+    color: rgba(108, 108, 108, 0.99);
     margin-top: 0.25rem;
     word-spacing: 1px;
     -webkit-user-select: none;
@@ -796,6 +799,7 @@ $btn-mb: 0.5rem;
         span {
           font-size: 90%;
           letter-spacing: 0.2px;
+          color: rgba(89, 89, 89, 0.99);
         }
       }
 
