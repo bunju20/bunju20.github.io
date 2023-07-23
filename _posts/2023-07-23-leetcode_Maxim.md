@@ -1,5 +1,5 @@
 ---
-title: Leetcode 1456. Maximum Number of Vowels in a Substring of Given Length
+title: Leetcode 1456. Maximum Number of Vowels...
 date: 2023-07-23 14:40:00 +09:00
 categories: [coding test,leetcode]
 tags:
@@ -8,6 +8,8 @@ tags:
   ]
 
 ---
+
+
 
 # 내풀이
 
