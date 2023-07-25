@@ -112,3 +112,21 @@ git push --force origin main
 
 위와 같이 수정하면 제대로 돌아간다.
 
+
+
+---
+
+2023-07-06
+
+> 오늘도 동일한 오류가 생겨서 위와 같이 했는데 이상하게 블로그가 업데이트가 안됐다.
+
+깃허브의 Action에 들어가서
+![image-20230726000734206](https://raw.githubusercontent.com/bunju20/image_server/main/img_/image-20230726000734206.png)
+
+잘들어갔을때로 들어가서
+
+![image-20230726000824635](https://raw.githubusercontent.com/bunju20/image_server/main/img_/image-20230726000824635.png)
+
+Re-run을하면 블로그가 제기능을 하는걸 알수있다.
+
+> 왜그러는진 나도 잘 모르겠다...
