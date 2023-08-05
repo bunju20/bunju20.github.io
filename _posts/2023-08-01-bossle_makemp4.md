@@ -78,11 +78,15 @@ const { execSync } = require('child_process');
 
    
 
- 저건 안되겠으니 `Whammy.js` 라는 JavaScript 라이브러리를 사용한다.
+ 저건 안되겠으니 `Whammy.js` 라는 JavaScript 라이브러리를 사용한다. 아래와 같이 html상에서 canvas가 만들어졌으니까 저걸 활용하면 된다.
+
+![image-20230805132320346](https://raw.githubusercontent.com/bunju20/image_server/main/img_/image-20230805132320346.png)
+
+   
 
 ### **1단계: Whammy.js 포함하기**
 
-먼저 HTML 파일에 Whammy.js 라이브러리를 포함시켜야 합니다. Whammy.js 라이브러리를 다운로드 받아서 프로젝트의 적절한 위치에 저장하고, 해당 위치를 기준으로 script 태그를 통해 불러온다.
+먼저 HTML 파일에 Whammy.js 라이브러리를 포함시켜야 함. Whammy.js 라이브러리를 다운로드 받아서 프로젝트의 적절한 위치에 저장하고, 해당 위치를 기준으로 script 태그를 통해 불러옴.
 
 ```html
 
@@ -108,39 +112,39 @@ const { execSync } = require('child_process');
 다음으로 JavaScript 파일에 Whammy Video 객체를 생성하고, 그리고자 하는 각 프레임에 대해 캔버스를 그리고 그것을 Whammy Video 객체에 추가해야 한다.
 
 ```js
-// 캔버스와 그래픽 컨텍스트에 대한 참조를 가져옵니다.
+// 캔버스와 그래픽 컨텍스트에 대한 참조를 가져옴
 var canvas = document.getElementsByTagName("canvas")[0];
 
-// Whammy Video 객체를 생성합니다.
+// Whammy Video 객체를 생성
 var video = new Whammy.Video(15); // 15는 FPS (frames per second)입니다.
 
-// 주어진 시간 동안(예: 10초), 일정 간격으로(예: 100밀리초) 캔버스를 캡처합니다.
+// 주어진 시간 동안(예: 10초), 일정 간격으로(예: 100밀리초) 캔버스를 캡처.
 var duration = 10; // 10초
 var interval = 100; // 100밀리초 간격
 
 var captureFrames = setInterval(function() {
-    // 캔버스를 이미지 데이터로 변환합니다.
+    // 캔버스를 이미지 데이터로 변환
     var dataURL = canvas.toDataURL('image/webp');
 
-    // 이미지 데이터를 Whammy Video 객체에 추가합니다.
+    // 이미지 데이터를 Whammy Video 객체에 추가
     video.add(dataURL);
 }, interval);
 
-// 지정된 시간이 경과한 후에 캡처를 중지하고 비디오를 컴파일합니다.
+// 지정된 시간이 경과한 후에 캡처를 중지하고 비디오를 컴파일
 setTimeout(function() {
     clearInterval(captureFrames);
 
-    // 동영상 데이터를 생성합니다.
+    // 동영상 데이터를 생성
     var output = video.compile();
 
-    // 생성된 동영상 데이터를 이용해 다운로드 링크를 만듭니다.
+    // 생성된 동영상 데이터를 이용해 다운로드 링크를 만듦
     var url = URL.createObjectURL(output);
     var link = document.createElement('a');
     link.href = url;
     link.download = 'output.webm';
     link.click();
 
-}, duration * 1000); // duration을 밀리초로 변환합니다.
+}, duration * 1000); // duration을 밀리초로 변환
 
 ```
 
