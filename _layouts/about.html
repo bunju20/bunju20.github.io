@@ -11,36 +11,10 @@ tail_includes:
 
 {% include lang.html %}
 
-<h1 data-toc-skip>{{ page.title }}</h1>
+<!-- <h1 data-toc-skip>{{ page.title }}</h1> -->
 
 <div class="post-meta text-muted">
   <!-- 여기에는 Jekyll용 메타 데이터 및 페이지 제목이 표시됩니다. -->
-  <span>
-    {{ site.data.locales[lang].post.posted }}
-    {% include datetime.html date=page.date tooltip=true lang=lang %}
-  </span>
-
-  {% if page.last_modified_at and page.last_modified_at != page.date %}
-  <span>
-    {{ site.data.locales[lang].post.updated }}
-    {% include datetime.html date=page.last_modified_at tooltip=true lang=lang
-    %}
-  </span>
-  {% endif %}
-
-  <div class="d-flex justify-content-between">
-    <span>
-      {{ site.data.locales[lang].post.written_by }}
-      <em>
-        {% if page.author %}
-        <a href="{{ site.data.authors[page.author].url }}">{{
-          site.data.authors[page.author].name }}</a>
-        {% else %}
-        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>
-        {% endif %}
-      </em>
-    </span>
-  </div>
 </div> <!-- .post-meta -->
 
 <div class="post-content">
