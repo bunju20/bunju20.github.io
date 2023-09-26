@@ -1,102 +1,38 @@
 ---
 layout: page
-refactor: true
-panel_includes:
-  - toc
-tail_includes:
-  - related-posts
-  - post-nav
-  - comments
+
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- SEO -->
-    <title>Bunju&#39;s Portfolio</title>
-    <meta
-      name="description"
-      content="Portfolio for world-renowned software
-    engineer Bunju"
-    />
-    <meta name="author" content="Bunju" />
-    <link rel="shortcut icon" href="../assets/img/images/favicon.ico" type="image/x-icon" />
-    <!-- OG (Open Graph Data) -->
-    <meta property="og:title" content="엘리의 포트폴리오" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="배포후 생성된 URL" />
-    <meta property="og:image" content="배포후에 생성된 이미지 URL" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome -->
-    <script
-      src="https://kit.fontawesome.com/9eb162ac0d.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- CSS -->
-    <link rel="stylesheet" href="../fordeco/style.css" />
-    <!-- Javascript -->
-    <script type="module" src="../assets/js/src/main.js" defer></script>
-    <script type="module" src="../assets/js/src/projects.js" defer></script>
-    <script type="module" src="../assets/js/src/active_menu.js" defer></script>
-  </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="header__logo">
-        <img class="header__logo__img" src="../assets/img/images/favicon.ico" alt="logo" />
-        <h1 class="header__logo__title"><a href="#">Bunju</a></h1>
-      </div>
-      <nav class="header__nav">
-        <ul class="header__menu">
-          <li><a class="header__menu__item active" href="#home">Home</a></li>
-          <li><a class="header__menu__item" href="#about">About</a></li>
-          <li><a class="header__menu__item" href="#skills">Skills</a></li>
-          <li><a class="header__menu__item" href="#work">My work</a></li>
-          <li>
-            <a class="header__menu__item" href="#testimonial">Testimonial</a>
-          </li>
-          <li><a class="header__menu__item" href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="header__toggle" aria-label="navigation menu toggle">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </header>
+        <!-- CSS -->
+        <link rel="stylesheet" href="../fordeco/style.css" />
+        <!-- Javascript -->
+        <script type="module" src="../assets/js/src/main.js" defer></script>
+        <script type="module" src="../assets/js/src/projects.js" defer></script>
+        <script type="module" src="../assets/js/src/active_menu.js" defer></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+    let maxWidth = 0;
+
+    // 모든 .major 요소의 너비를 검사
+    document.querySelectorAll('.major').forEach(element => {
+        const width = element.offsetWidth;
+        if (width > maxWidth) {
+            maxWidth = width;
+        }
+    });
+
+    // 모든 .major 요소의 너비를 가장 큰 너비 값으로 설정
+    document.querySelectorAll('.major').forEach(element => {
+        element.style.width = `${maxWidth}px`;
+    });
+});
+
+        </script>
     <!-- Main -->
     <main>
-      <!-- Home -->
-      <section id="home">
-        <div class="home__container">
-          <img
-            class="home__avatar"
-            src="../assets/img/images/profile.png"
-            alt="Bunju's profile"
-          />
-          <h2 class="home__title">
-            Hello <br />I&#39;m
-            <strong class="home__title--strong">Diligent developer</strong>, Bunju
-          </h2>
-          <p class="home__description">
-            A developer currently in their junior year at Dongguk University.
-          </p>
-          <a class="home__contact" href="#contact">Contact Me</a>
-        </div>
-      </section>
       <!-- About -->
       <section id="about" class="section max-container">
-        <h2 class="title">About me</h2>
-        <p class="description">
-          저는 동국대학교 컴퓨터 공학과 3학년 학생으로, 주로 프론트앤드 개발을 담당하고 있습니다.
-          <br>&#128513;현재는 백엔드를 공부하고 있습니다. 새로운 걸 배우는 것을 즐기는 편입니다.</p>
         <ul class="majors">
           <li class="major">
             <i class="fa-brands fa-html5 major__icon"></i>
@@ -111,16 +47,7 @@ tail_includes:
           <li class="major">
             <i class="fa-solid fa-server major__icon"></i>
             <p class="major__title">Back-end</p>
-            <p>Nodejs , Java</p>
-          </li>
-        </ul>
-        <ul class="jobs">
-          <li class="job">
-            <img src="../assets/img/images/jobs/dong.png" alt="dong logo" />
-            <div>
-              <p class="job__name">Dongguk University, 3rd year</p>
-              <p class="job__period">2020 Oct - Until now</p>
-            </div>
+            <p>Nodejs , Java                    </p>
           </li>
         </ul>
       </section>
@@ -327,65 +254,4 @@ tail_includes:
           </ul>
         </div>
       </section>
-      <!-- Testimonials -->
-      <section id="testimonial" class="section max-container">
-        <h2 class="title">Testimonial</h2>
-        <p class="description">See what they say about me</p>
-        <ul class="testimonials">
-          <li class="testimonial">
-            <img
-              src="../assets/img/images/testimonials/people1.png"
-              alt="people1"
-              class="testimonial__img"
-            />
-            <div class="testimonial__bubble">
-              <p>
-                취업하고나면 적겠습니다.
-              </p>
-              <p>
-                <a href="#" class="testimonial__bubble__name">Someone</a>
-                /어느회사
-              </p>
-            </div>
-          </li>
-        </ul>
-      </section>
-      <!-- Arrow up -->
-      <aside>
-        <a class="arrow-up" href="#home" title="back to top">
-          <i class="fa-solid fa-arrow-up"></i>
-        </a>
-      </aside>
-    </main>
-    <!-- Footer -->
-    <footer id="contact" class="section">
-      <div class="max-container">
-        <h2 class="title">Let&#39;s talk</h2>
-        <p class="description"></p>
-        <ul class="contact__links">
-          <li>
-            <a
-              class="contact__link"
-              href="https://github.com/bunju20"
-              target="_blank"
-              title="my github link"
-            >
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              class="contact__link"
-              href="https://github.com/bunju20"
-              target="_blank"
-              title="my linkedin link"
-            >
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-          </li>
-        </ul>
-        <p>ⓒBunju - All rights reserved</p>
-      </div>
-    </footer>
   </body>
-</html>
