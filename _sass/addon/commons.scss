@@ -35,8 +35,15 @@ body {
     env(safe-area-inset-bottom) env(safe-area-inset-left);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'RIDIBatang';
 
+}
+
+@font-face {
+  font-family: 'RIDIBatang';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* --- Typography --- */
@@ -1065,7 +1072,7 @@ $btn-mb: 0.5rem;
   display: none;
   font-size: 1.1rem;
   font-weight: 600;
-  font-family: sans-serif;
+  font-family: 'RIDIBatang';
   color: var(--topbar-text-color);
   text-align: center;
   width: 70%;
@@ -1171,7 +1178,7 @@ $btn-mb: 0.5rem;
   }
 
   .toast-body {
-    font-family: Lato, sans-serif;
+    font-family: 'RIDIBatang', sans-serif;
     line-height: 1.25rem;
 
     button {
