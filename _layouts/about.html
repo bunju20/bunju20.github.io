@@ -1,35 +1,52 @@
 ---
 layout: page
-
+refactor: true
+panel_includes:
+- toc
+tail_includes:
+- related-posts
+- post-nav
+- comments
 ---
 
-<body>
-  <!-- CSS -->
-  <link rel="stylesheet" href="../fordeco/style.css" />
-  <!-- Javascript -->
-  <script type="module" src="../assets/js/src/main.js" defer></script>
-  <script type="module" src="../assets/js/src/projects.js" defer></script>
-  <script type="module" src="../assets/js/src/active_menu.js" defer></script>
-  <script>
-          document.addEventListener('DOMContentLoaded', function() {
-    let maxWidth = 0;
+{% include lang.html %}
 
-    // 모든 .major 요소의 너비를 검사
-    document.querySelectorAll('.major').forEach(element => {
-        const width = element.offsetWidth;
-        if (width > maxWidth) {
-            maxWidth = width;
-        }
-    });
+<h1 data-toc-skip>{{ page.title }}</h1>
 
-    // 모든 .major 요소의 너비를 가장 큰 너비 값으로 설정
-    document.querySelectorAll('.major').forEach(element => {
-        element.style.width = `${maxWidth}px`;
-    });
-});
+<div class="post-meta text-muted">
+  <!-- 여기에는 Jekyll용 메타 데이터 및 페이지 제목이 표시됩니다. -->
+  <span>
+    {{ site.data.locales[lang].post.posted }}
+    {% include datetime.html date=page.date tooltip=true lang=lang %}
+  </span>
 
-        </script>
-  <!-- Main -->
+  {% if page.last_modified_at and page.last_modified_at != page.date %}
+  <span>
+    {{ site.data.locales[lang].post.updated }}
+    {% include datetime.html date=page.last_modified_at tooltip=true lang=lang
+    %}
+  </span>
+  {% endif %}
+
+  <div class="d-flex justify-content-between">
+    <span>
+      {{ site.data.locales[lang].post.written_by }}
+      <em>
+        {% if page.author %}
+        <a href="{{ site.data.authors[page.author].url }}">{{
+          site.data.authors[page.author].name }}</a>
+        {% else %}
+        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>
+        {% endif %}
+      </em>
+    </span>
+  </div>
+</div> <!-- .post-meta -->
+
+<div class="post-content">
+  <!-- 여기에 실제 내용이 들어갑니다. -->
+
+  <!-- 실제 HTML 내용 시작 -->
   <main>
     <!-- About -->
     <section id="about" class="section max-container">
@@ -247,4 +264,83 @@ layout: page
       </div>
     </section>
   </main>
-</body>
+  <!-- 실제 HTML 내용 끝 -->
+
+</div>
+<!-- CSS -->
+<link rel="stylesheet" href="../fordeco/style.css" />
+
+<!-- Javascript -->
+<script type="module" src="../assets/js/src/main.js" defer></script>
+<script type="module" src="../assets/js/src/projects.js" defer></script>
+<script type="module" src="../assets/js/src/active_menu.js" defer></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let maxWidth = 0;
+
+      // 모든 .major 요소의 너비를 검사
+      document.querySelectorAll('.major').forEach(element => {
+          const width = element.offsetWidth;
+          if (width > maxWidth) {
+              maxWidth = width;
+          }
+      });
+
+      // 모든 .major 요소의 너비를 가장 큰 너비 값으로 설정
+      document.querySelectorAll('.major').forEach(element => {
+          element.style.width = `${maxWidth}px`;
+      });
+  });
+</script>
+
+<div class="post-tail-wrapper text-muted">
+  <!-- 여기에는 댓글, 공유 버튼, 저작권 정보 등의 페이지 꼬리말이 표시됩니다. -->
+  {% if page.categories.size > 0 %}
+  <div class="post-meta mb-3">
+    <i class="far fa-folder-open fa-fw me-1"></i>
+    {% for category in page.categories %}
+    <a
+      href='{{ site.baseurl }}/categories/{{ category | slugify | url_encode }}/'>{{
+      category }}</a>
+    {%- unless forloop.last -%}, {%- endunless -%}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if page.tags.size > 0 %}
+  <div class="post-tags">
+    <i class="fa fa-tags fa-fw me-1"></i>
+    {% for tag in page.tags %}
+    <a href="{{ site.baseurl }}/tags/{{ tag | slugify | url_encode }}/"
+      class="post-tag no-text-decoration">
+      {{- tag -}}
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div
+    class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2">
+    <div class="license-wrapper">
+      {% if site.data.locales[lang].copyright.license.template %}
+      {% capture _replacement %}
+      <a href="{{ site.data.locales[lang].copyright.license.link }}">
+        {{ site.data.locales[lang].copyright.license.name }}
+      </a>
+      {% endcapture %}
+      {{ site.data.locales[lang].copyright.license.template | replace:
+      ':LICENSE_NAME', _replacement }}
+      {% endif %}
+    </div>
+    {% include post-sharing.html lang=lang %}
+  </div><!-- .post-tail-bottom -->
+  <script src="https://utteranc.es/client.js"
+    repo="bunju20/bunju20.github.io"
+    issue-term="pathname"
+    label="Comment"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+    </script>
+</div><!-- div.post-tail-wrapper -->
